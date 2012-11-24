@@ -127,7 +127,7 @@ function eval(x, e) {
         var vars = x[1];
         var exp = x[2];
         return function () {
-                return eval(exp, environment({pars: vars, args: arguments, outer: e }));
+                return eval(exp, Env({pars: vars, args: arguments, outer: e }));
         };
     } else if (x[0] === 'begin') {     
         var val;
