@@ -97,7 +97,7 @@ function add_globals(e) {
     return e;
 };
 
-var global_env = add_globals(Env({pars: [], args: [], outer: undefined}));
+var global_env = add_globals(Env({pars: [], args: []}));
 
 //Eval
 function eval(x, e) {
