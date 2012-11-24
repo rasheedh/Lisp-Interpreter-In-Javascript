@@ -185,15 +185,21 @@ function atom(token)
 	}
 }
 var parse = read;
-function repl(s){
-while (true){
-var val  = eval(parse(s));
-return val
-}
-}
-s = '(lambda (r) (* 3.141592653 (* r r)))'
-//y = tokenize(s);
-//y = read_from(s);
-y = read(s);
-console.log(y)
+function repl(){
+  process.stdin.resume();
+  process.stdout.write('Enter the scheme:- ');
+  process.stdin.on('data',function(input){
+  input = input.toString();
+  var val = eval(parse(input))
+  if (val != undefined)
+  {
+    process.stdout.write('Result:'+val);
+  }
+  else {process.stdout.write('Enter the valu:- ');
+  }
+  }
+  )
+  }
+  
+repl()
 
