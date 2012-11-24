@@ -187,7 +187,7 @@ function atom(token)
 var parse = read;
 function repl(){
   process.stdin.resume();
-  process.stdout.write('Enter the scheme:- ');
+  process.stdout.write('Lisp> ');
   process.stdin.on('data',function(input){
   input = input.toString();
   var val = eval(parse(input))
@@ -195,7 +195,7 @@ function repl(){
   {
     process.stdout.write('Result:'+val);
   }
-  else {process.stdout.write('Enter the valu:- ');
+  else {process.stdout.write('Lisp> ');
   }
   }
   )
